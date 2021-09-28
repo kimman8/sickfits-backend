@@ -1,21 +1,9 @@
-import "dotenv/config";
-import { createAuth } from "@keystone-next/auth";
-import { config, createSchema } from "@keystone-next/keystone/schema";
+import 'dotenv/config';
+import { createAuth } from '@keystone-next/auth';
+import { config, createSchema } from '@keystone-next/keystone/schema';
 import {
   withItemData,
   statelessSessions,
-<<<<<<< HEAD
-} from "@keystone-next/keystone/session";
-import { extendGraphqlSchema } from "./mutations/index";
-import { User } from "./schemas/User";
-import { Product } from "./schemas/Product";
-import { OrderItem } from "./schemas/OrderItem";
-import { Order } from "./schemas/Order";
-import { ProductImage } from "./schemas/ProductImage";
-import { CartItem } from "./schemas/CartItem";
-import { insertSeedData } from "./seed-data";
-import { sendPasswordResetEmail } from "./lib/mail";
-=======
 } from '@keystone-next/keystone/session';
 import { extendGraphqlSchema } from './mutations/index';
 import { User } from './schemas/User';
@@ -26,10 +14,9 @@ import { ProductImage } from './schemas/ProductImage';
 import { CartItem } from './schemas/CartItem';
 import { insertSeedData } from './seed-data';
 import { sendPasswordResetEmail } from './lib/mail';
->>>>>>> 174ad752374eaafa0d3858c41c3a9d1cc18ddf1b
 
 const databaseURL =
-  process.env.DATABASE_URL || "mongodb://localhost/keystone-sick-fits-tutorial";
+  process.env.DATABASE_URL || 'mongodb://localhost/keystone-sick-fits-tutorial';
 
 const sessionConfig = {
   maxAge: 60 * 60 * 24 * 360, // how long should they stay signed in for
@@ -37,11 +24,11 @@ const sessionConfig = {
 };
 
 const { withAuth } = createAuth({
-  listKey: "User",
-  identityField: "email",
-  secretField: "password",
+  listKey: 'User',
+  identityField: 'email',
+  secretField: 'password',
   initFirstItem: {
-    fields: ["name", "email", "password"],
+    fields: ['name', 'email', 'password'],
     // TODO: add in initial roles here
   },
   passwordResetLink: {
@@ -61,10 +48,10 @@ export default withAuth(
       },
     },
     db: {
-      adapter: "mongoose",
+      adapter: 'mongoose',
       url: databaseURL,
       async onConnect(keystone) {
-        if (process.argv.includes("--seed-data")) {
+        if (process.argv.includes('--seed-data')) {
           await insertSeedData(keystone);
         }
       },
@@ -86,7 +73,7 @@ export default withAuth(
     },
     session: withItemData(statelessSessions(sessionConfig), {
       // graphql query
-      User: "id",
+      User: 'id',
     }),
   })
 );

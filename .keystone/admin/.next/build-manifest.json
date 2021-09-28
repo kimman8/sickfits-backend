@@ -14,11 +14,6 @@
     "static/development/_ssgManifest.js"
   ],
   "pages": {
-    "/": [
-      "static/chunks/main.js",
-      "static/chunks/webpack.js",
-      "static/chunks/pages/index.js"
-    ],
     "/_app": [
       "static/chunks/main.js",
       "static/chunks/webpack.js",
@@ -28,14 +23,11 @@
       "static/chunks/main.js",
       "static/chunks/webpack.js",
       "static/chunks/pages/_error.js"
-<<<<<<< HEAD
-=======
     ],
-    "/orders": [
+    "/products": [
       "static/chunks/main.js",
       "static/chunks/webpack.js",
-      "static/chunks/pages/orders.js"
->>>>>>> 174ad752374eaafa0d3858c41c3a9d1cc18ddf1b
+      "static/chunks/pages/products.js"
     ]
   },
   "ampFirstPages": []
