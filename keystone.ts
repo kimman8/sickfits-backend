@@ -4,6 +4,7 @@ import { config, createSchema } from "@keystone-next/keystone/schema";
 import {
   withItemData,
   statelessSessions,
+<<<<<<< HEAD
 } from "@keystone-next/keystone/session";
 import { extendGraphqlSchema } from "./mutations/index";
 import { User } from "./schemas/User";
@@ -14,6 +15,18 @@ import { ProductImage } from "./schemas/ProductImage";
 import { CartItem } from "./schemas/CartItem";
 import { insertSeedData } from "./seed-data";
 import { sendPasswordResetEmail } from "./lib/mail";
+=======
+} from '@keystone-next/keystone/session';
+import { extendGraphqlSchema } from './mutations/index';
+import { User } from './schemas/User';
+import { Product } from './schemas/Product';
+import { OrderItem } from './schemas/OrderItem';
+import { Order } from './schemas/Order';
+import { ProductImage } from './schemas/ProductImage';
+import { CartItem } from './schemas/CartItem';
+import { insertSeedData } from './seed-data';
+import { sendPasswordResetEmail } from './lib/mail';
+>>>>>>> 174ad752374eaafa0d3858c41c3a9d1cc18ddf1b
 
 const databaseURL =
   process.env.DATABASE_URL || "mongodb://localhost/keystone-sick-fits-tutorial";

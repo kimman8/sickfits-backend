@@ -28,6 +28,14 @@
       "static/chunks/main.js",
       "static/chunks/webpack.js",
       "static/chunks/pages/_error.js"
+<<<<<<< HEAD
+=======
+    ],
+    "/orders": [
+      "static/chunks/main.js",
+      "static/chunks/webpack.js",
+      "static/chunks/pages/orders.js"
+>>>>>>> 174ad752374eaafa0d3858c41c3a9d1cc18ddf1b
     ]
   },
   "ampFirstPages": []

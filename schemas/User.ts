@@ -17,6 +17,10 @@ export const User = list({
         itemView: { fieldMode: "read" },
       },
     }),
+<<<<<<< HEAD
     orders: relationship({ ref: "Order.user", many: true }),
+=======
+    orders: relationship({ ref: 'Order.user', many: true }),
+>>>>>>> 174ad752374eaafa0d3858c41c3a9d1cc18ddf1b
   },
 });
