@@ -1,5 +1,5 @@
-import { list } from '@keystone-next/keystone/schema';
-import { text, password, relationship } from '@keystone-next/fields';
+import { list } from "@keystone-next/keystone/schema";
+import { text, password, relationship } from "@keystone-next/fields";
 
 // this is a named export, we using it to make the imports a bit nicer
 export const User = list({
@@ -10,13 +10,13 @@ export const User = list({
     email: text({ isRequired: true, isUnique: true }),
     password: password(),
     cart: relationship({
-      ref: 'CartItem.user',
+      ref: "CartItem.user",
       many: true,
       ui: {
-        createView: { fieldMode: 'hidden' },
-        itemView: { fieldMode: 'read' },
+        createView: { fieldMode: "hidden" },
+        itemView: { fieldMode: "read" },
       },
     }),
-    // TODO: Add roles, cart and orders
+    orders: relationship({ ref: "Order.user", many: true }),
   },
 });

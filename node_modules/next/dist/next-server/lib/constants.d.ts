@@ -33,3 +33,4 @@ export declare const PERMANENT_REDIRECT_STATUS = 308;
 export declare const STATIC_PROPS_ID = "__N_SSG";
 export declare const SERVER_PROPS_ID = "__N_SSP";
 export declare const OPTIMIZED_FONT_PROVIDERS: string[];
+export declare const STATIC_STATUS_PAGES: string[];

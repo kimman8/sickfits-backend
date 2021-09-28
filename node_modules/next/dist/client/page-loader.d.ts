@@ -24,9 +24,9 @@ export default class PageLoader {
      */
     getDataHref(href: string, asPath: string, ssg: boolean, locale?: string | false): string;
     /**
-     * @param {string} href the route href (file-system path)
+     * @param {string} route - the route (file-system path)
      */
-    _isSsg(href: string): Promise<boolean>;
+    _isSsg(route: string): Promise<boolean>;
     loadPage(route: string): Promise<GoodPageCache>;
     prefetch(route: string): Promise<void>;
 }

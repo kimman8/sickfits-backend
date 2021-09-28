@@ -1,6 +1,7 @@
 /// <reference types="node" />
 import { IncomingMessage, ServerResponse } from 'http';
 import { UrlWithParsedQuery } from 'url';
+import { RouteHas } from '../../lib/load-custom-routes';
 export declare const route: (path: string) => (pathname: string | null | undefined, params?: any) => any;
 export declare type Params = {
     [param: string]: any;
@@ -15,6 +16,7 @@ declare type RouteResult = {
 };
 export declare type Route = {
     match: RouteMatch;
+    has?: RouteHas[];
     type: string;
     check?: boolean;
     statusCode?: number;
@@ -32,8 +34,12 @@ export default class Router {
     basePath: string;
     headers: Route[];
     fsRoutes: Route[];
-    rewrites: Route[];
     redirects: Route[];
+    rewrites: {
+        beforeFiles: Route[];
+        afterFiles: Route[];
+        fallback: Route[];
+    };
     catchAllRoute: Route;
     pageChecker: PageChecker;
     dynamicRoutes: DynamicRoutes;
@@ -43,7 +49,11 @@ export default class Router {
         basePath: string;
         headers: Route[];
         fsRoutes: Route[];
-        rewrites: Route[];
+        rewrites: {
+            beforeFiles: Route[];
+            afterFiles: Route[];
+            fallback: Route[];
+        };
         redirects: Route[];
         catchAllRoute: Route;
         dynamicRoutes: DynamicRoutes | undefined;

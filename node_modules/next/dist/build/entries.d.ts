@@ -6,7 +6,10 @@ declare type PagesMapping = {
 };
 export declare function createPagesMapping(pagePaths: string[], extensions: string[]): PagesMapping;
 export declare type WebpackEntrypoints = {
-    [bundle: string]: string | string[];
+    [bundle: string]: string | string[] | {
+        import: string | string[];
+        dependOn?: string | string[];
+    };
 };
 declare type Entrypoints = {
     client: WebpackEntrypoints;

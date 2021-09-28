@@ -32,7 +32,7 @@ export declare type Future<V> = {
 export interface RouteLoader {
     whenEntrypoint(route: string): Promise<RouteEntrypoint>;
     onEntrypoint(route: string, execute: () => unknown): void;
-    loadRoute(route: string): Promise<RouteLoaderEntry>;
+    loadRoute(route: string, prefetch?: boolean): Promise<RouteLoaderEntry>;
     prefetch(route: string): Promise<void>;
 }
 export declare function markAssetError(err: Error): Error;
