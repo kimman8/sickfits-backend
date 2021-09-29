@@ -2,6 +2,7 @@
 
 import { KeystoneContext } from "@keystone-next/types";
 import { CartItemCreateInput } from "../.keystone/schema-types";
+import stripeConfig from "../lib/stripe";
 import { Session } from "../types";
 
 const graphql = String.raw;
